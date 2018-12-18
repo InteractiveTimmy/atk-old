@@ -3,20 +3,12 @@ import 'regenerator-runtime/runtime'; // required for saga
 import { createStore, applyMiddleware, compose } from 'redux';
 
 import thunk from 'redux-thunk';
-import createSagaMiddleWare from 'redux-saga';
 
 import rootReducer from './reducers/index.js';
 
-import { watchGetPhotos, watchNextPhoto, watchPrevPhoto } from './sagas/photos-saga.js';
-
 const initialState = { };
 
-const sagaMiddleWare = createSagaMiddleWare( );
-
-const middleware = [
-  thunk,
-  sagaMiddleWare
-];
+const middleware = [ thunk ];
 
 // check for devtools
 const composeEnhancers =
@@ -33,10 +25,5 @@ const store = createStore(
     composeEnhancers
   )
 );
-
-// start generator functions
-sagaMiddleWare.run( watchGetPhotos );
-sagaMiddleWare.run( watchNextPhoto );
-sagaMiddleWare.run( watchPrevPhoto );
 
 export default store;
