@@ -1,8 +1,13 @@
 const theme = {
-  colors: {
+  widgets: {
     bg: '#333333',
     fg: '#eeeeee',
-    cc: '#ffffff'
+    tc: '#ffffff'
+  },
+  applet: {
+    bg: '#333333',
+    fg: '#eeeeee',
+    tc: '#ffffff'
   }
 };
 

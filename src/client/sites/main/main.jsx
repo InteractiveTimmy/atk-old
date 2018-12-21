@@ -3,7 +3,7 @@ import { ThemeProvider } from 'react-jss';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 
-import { Widgets, WidgetsList, WidgetContainer, WidgetsConfigurations, WidgetsConfiguration, WidgetsConfigurationContainer } from '../../components/index.js';
+import { AppletContainer, Widgets, WidgetsList, WidgetContainer, WidgetsConfigurations, WidgetsConfiguration, WidgetsConfigurationContainer } from '../../components/index.js';
 
 import { shadeBlend } from '../../utils/index.js';
 
@@ -62,7 +62,30 @@ class Main extends Component
                   <div className='scroll'>🡇</div>
                   <div className='applets-expander'>● ● ●</div>
                 </div>
-                <div id='applet-container'>Applet</div>
+
+                <AppletContainer>
+                  <div style={{ margin: '1em 0', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Basic Content</div>
+                  <WidgetsConfigurations>
+                    <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
+                    <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
+                    <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
+                    <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
+                  </WidgetsConfigurations>
+                  <WidgetsConfigurations>
+                    <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
+                    <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
+                    <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
+                  </WidgetsConfigurations>
+                  <WidgetsConfigurations>
+                    <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
+                    <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
+                  </WidgetsConfigurations>
+                  <WidgetsConfigurations>
+                    <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
+                  </WidgetsConfigurations>
+                  <div style={{ margin: '1em 0', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Basic Content</div>
+                </AppletContainer>
+
                 <Widgets>
                   <WidgetsList>
                     <WidgetContainer>

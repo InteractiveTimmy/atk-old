@@ -8,10 +8,15 @@ const theme = {
 */
 
 const theme = {
-  colors: {
+  widgets: {
     bg: '#aa8899',
     fg: '#eeeeee',
-    cc: '#000000'
+    tc: '#000000'
+  },
+  applet: {
+    bg: '#eeeeee',
+    fg: '#333333',
+    tc: '#888888'
   }
 };
 

@@ -6,3 +6,5 @@ export { default as WidgetsConfigurations } from './widgets-configurations/widge
 export { default as WidgetsConfiguration } from './widgets-configuration/widgets-configuration.jsx';
 export { default as WidgetsConfigurationContainer } from './widgets-configuration-container/widgets-configuration-container.jsx';
 export { default as WidgetContainer } from './widget-container/widget-container.jsx';
+
+export { default as AppletContainer } from './applet-container/applet-container.jsx';
