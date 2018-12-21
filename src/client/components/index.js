@@ -1,5 +1,7 @@
 export { default as Sample } from './sample/sample.jsx';
 
+export { default as Spacer } from './spacer/spacer.jsx';
+
 export { default as Widgets } from './widgets/widgets.jsx';
 export { default as WidgetsList } from './widgets-list/widgets-list.jsx';
 export { default as WidgetsConfigurations } from './widgets-configurations/widgets-configurations.jsx';

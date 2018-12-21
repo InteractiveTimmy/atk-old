@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import injectSheet from 'react-jss';
 
+import 'react-perfect-scrollbar/dist/css/styles.css';
+import PerfectScrollbar from 'react-perfect-scrollbar'
+
 import styles from './applet-container.style.js';
 
 class AppletContainer extends Component
@@ -20,7 +23,9 @@ class AppletContainer extends Component
 
     return (
       <div className={classes.AppletContainer}>
+      <PerfectScrollbar>
         {children}
+      </PerfectScrollbar>
       </div>
     )
   }

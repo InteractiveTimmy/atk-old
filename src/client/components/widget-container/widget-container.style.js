@@ -9,11 +9,7 @@ const styles = theme => ( {
     borderStyle: 'solid',
     borderWidth: '1px',
     borderColor: shadeBlend( 0.12, theme.widgets.bg, theme.widgets.tc ),
-    flexShrink: 0,
-
-    '&:last-child': {
-      marginBottom: '0.5em'
-    }
+    flexShrink: 0
   }
 } );
 

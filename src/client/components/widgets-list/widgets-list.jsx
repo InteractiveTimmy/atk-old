@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import injectSheet from 'react-jss';
 
+import 'react-perfect-scrollbar/dist/css/styles.css';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+
 import styles from './widgets-list.style.js';
 
 class WidgetsList extends Component
@@ -20,7 +23,9 @@ class WidgetsList extends Component
 
     return (
       <div className={classes.WidgetsList}>
-        {children}
+        <PerfectScrollbar>
+          {children}
+        </PerfectScrollbar>
       </div>
     );
   }

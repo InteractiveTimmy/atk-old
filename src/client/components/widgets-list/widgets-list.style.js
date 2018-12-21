@@ -6,6 +6,7 @@ const styles = theme => ( {
     flexGrow: 1,
     backgroundColor: shadeBlend( 0.06, theme.widgets.bg, theme.widgets.tc ),
     color: theme.widgets.fg,
+    overflowY: 'auto',
     display: 'flex',
     flexDirection: 'column'
   }
