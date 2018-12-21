@@ -2,7 +2,7 @@ import { shadeBlend } from '../../utils/index.js';
 
 const styles = theme => ( {
   WidgetsConfiguration: {
-    transition: '0.2s all',
+    transition: 'background-color 0.2s, color 0.2s',
     flexGrow: 1,
     flexBasis: 0,
     cursor: 'pointer',
