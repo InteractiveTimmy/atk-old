@@ -1,7 +1,9 @@
 const theme = {
-  bgc: '#333',
-  fgc: '#eee',
-  rounded: true
+  colors: {
+    bg: '#333333',
+    fg: '#eeeeee',
+    cc: '#ffffff'
+  }
 };
 
 export default theme;
