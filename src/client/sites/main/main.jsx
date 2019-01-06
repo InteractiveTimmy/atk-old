@@ -3,7 +3,7 @@ import { ThemeProvider } from 'react-jss';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 
-import { Spacer, AppletContainer, Widgets, WidgetsList, WidgetContainer, WidgetsConfigurations, WidgetsConfiguration, WidgetsConfigurationContainer } from '../../components/index.js';
+import { Spacer, WidgetGroup, AppletContainer, Widgets, WidgetsList, WidgetContainer, WidgetsConfigurations, WidgetsConfiguration, WidgetsConfigurationContainer } from '../../components/index.js';
 
 import { shadeBlend } from '../../utils/index.js';
 
@@ -45,9 +45,9 @@ class Main extends Component
                 </div>
                 <div className='scroll'>🡆</div>
                 <div className='widget-groups'>
-                  <div className='widget-group'>WG</div>
-                  <div className='widget-group'>WG</div>
-                  <div className='widget-group'>WG</div>
+                  <WidgetGroup Icon={Icons.AccountCircle} />
+                  <WidgetGroup Icon={Icons.Notifications} />
+                  <WidgetGroup Icon={Icons.Chat} />
                 </div>
               </div>
               <div className='content'>
@@ -158,7 +158,12 @@ class Main extends Component
                       <div style={{ margin: '1em 0', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Some More Basic Content</div>
                     </WidgetContainer>
                     <WidgetContainer>
-                      <div style={{ margin: '1em 0', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Even More Basic Content</div>
+                      <div style={{ margin: '1em 0', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>So</div>
+                      <div style={{ margin: '1em 0', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Much</div>
+                      <div style={{ margin: '1em 0', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Basic</div>
+                      <div style={{ margin: '1em 0', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Content</div>
+                      <div style={{ margin: '1em 0', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>To</div>
+                      <div style={{ margin: '1em 0', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Show</div>
                     </WidgetContainer>
                     <WidgetContainer>
                       <WidgetsConfigurations>
@@ -175,62 +180,6 @@ class Main extends Component
                       <WidgetsConfigurations>
                         <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
                         <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
-                        <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
-                      </WidgetsConfigurations>
-                    </WidgetContainer>
-                    <WidgetContainer>
-                      <WidgetsConfigurations>
-                        <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
-                        <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
-                        <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
-                        <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
-                      </WidgetsConfigurations>
-                    </WidgetContainer>
-                    <WidgetContainer>
-                      <WidgetsConfigurations>
-                        <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
-                        <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
-                        <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
-                        <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
-                      </WidgetsConfigurations>
-                      <WidgetsConfigurations>
-                        <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
-                        <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
-                        <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
-                      </WidgetsConfigurations>
-                      <WidgetsConfigurations>
-                        <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
-                        <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
-                      </WidgetsConfigurations>
-                      <WidgetsConfigurations>
-                        <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
-                      </WidgetsConfigurations>
-                    </WidgetContainer>
-                    <WidgetContainer>
-                      <WidgetsConfigurations>
-                        <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
-                        <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
-                        <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
-                        <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
-                      </WidgetsConfigurations>
-                    </WidgetContainer>
-                    <WidgetContainer>
-                      <WidgetsConfigurations>
-                        <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
-                        <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
-                        <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
-                        <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
-                      </WidgetsConfigurations>
-                      <WidgetsConfigurations>
-                        <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
-                        <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
-                        <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
-                      </WidgetsConfigurations>
-                      <WidgetsConfigurations>
-                        <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
-                        <WidgetsConfiguration text='Settings' Icon={Icons.WidgetSettings} />
-                      </WidgetsConfigurations>
-                      <WidgetsConfigurations>
                         <WidgetsConfiguration text='Logout' Icon={Icons.SignOut} />
                       </WidgetsConfigurations>
                     </WidgetContainer>

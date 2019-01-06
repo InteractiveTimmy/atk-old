@@ -14,6 +14,11 @@ const theme = {
     bg: '#333333',
     fg: '#eeeeee',
     tc: '#ffffff'
+  },
+  header: {
+    bg: '#333333',
+    fg: '#eeeeee',
+    tc: '#ffffff'
   }
 };
 

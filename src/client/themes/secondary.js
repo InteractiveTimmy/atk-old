@@ -1,12 +1,3 @@
-/*
-const theme = {
-  colors: {
-    bg: '#eeeeee',
-    fg: '#333333'
-  }
-};
-*/
-
 const theme = {
   status: {
     processing: '66bb44',
@@ -15,14 +6,19 @@ const theme = {
     error: 'ee2211'
   },
   widgets: {
-    bg: '#aa8899',
+    bg: '#7772ff',
     fg: '#eeeeee',
-    tc: '#000000'
+    tc: '#ffffff'
   },
   applet: {
     bg: '#eeeeee',
+    fg: '#72f6ff',
+    tc: '#ffffff'
+  },
+  header: {
+    bg: '#bd72ff',
     fg: '#333333',
-    tc: '#888888'
+    tc: '#ffffff'
   }
 };
 
