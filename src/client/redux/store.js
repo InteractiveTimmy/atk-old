@@ -1,5 +1,3 @@
-import 'regenerator-runtime/runtime'; // required for saga
-
 import { createStore, applyMiddleware, compose } from 'redux';
 
 import thunk from 'redux-thunk';

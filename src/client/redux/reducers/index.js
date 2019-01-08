@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux';
-import redItems from './item-reducer.js';
-import redPhotos from './photo-reducer.js';
+import themeReducer from './theme-reducer.js';
 
 export default combineReducers( {
-  items: redItems,
-  photos: redPhotos
+  theme: themeReducer
 } );

@@ -1,0 +1,84 @@
+/* base -- begin */
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,700');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, body, #app {
+  height: 100%;
+  min-height: 100%;
+}
+
+html {
+  font-family: 'Work Sans', sans-serif;
+}
+
+#app {
+  display: flex;
+}
+
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* base -- end */
+
+/* normal-screen -- begin */
+.workspaces {
+  background-color: #333333;
+  width: 12em;
+}
+
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #444444;
+  height: 4em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  flex-grow: 1;
+  flex-shrink: 1;
+  background-color: #555555;
+
+  display: flex;
+}
+
+.applet {
+  background-color: #666666;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+
+.widget {
+  background-color: #777777;
+  width: 20em;
+}
+/* normal-screen -- end */
+
+/* small-screen -- begin */
+@media ( max-width: 62em ) {
+  .widget {
+    overflow: hidden;
+    width: 0em;
+  }
+
+  .workspaces {
+    overflow: hidden;
+    width: 0em;
+  }
+}
+/* small-screen -- end */
