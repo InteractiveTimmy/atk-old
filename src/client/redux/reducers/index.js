@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import themeReducer from './theme-reducer.js';
+import viewReducer from './view-reducer.js';
 
 export default combineReducers( {
-  theme: themeReducer
+  view: viewReducer
 } );

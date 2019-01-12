@@ -1,4 +1,4 @@
-@import url( 'https://fonts.googleapis.com/css?family=Work+Sans:400,700' );
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,700');
 
 * {
   padding: 0;
@@ -7,17 +7,11 @@
 
 html, body, #app {
   height: 100%;
-  max-height: 100%;
   min-height: 100%;
 }
 
 html {
-  font: 16px 'Work Sans', sans-serif;
-}
-
-#app {
-  display: flex;
-  align-items: stretch;
+  font-family: 'Work Sans', sans-serif;
 }
 
 .no-select {
