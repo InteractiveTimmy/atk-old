@@ -3,7 +3,7 @@ import injectSheet from 'react-jss';
 
 import styles from './default.style.js';
 
-// import * as Comps from '../../components/index.js';
+import * as Comps from '../../components/index.js';
 
 class Index extends Component
 {
@@ -14,8 +14,13 @@ class Index extends Component
     return (
       <Fragment>
         <div className={classes.navigation}>
-          <div>brand</div>
-          <div>menu</div>
+          <div style={{ height: '4em', display: 'flex', alignItems: 'center' }}>
+            <img style={{ height: '3.2em', margin: '0.4em'}} src='https://icons8.github.io/flat-color-icons/svg/cloth.svg' alt='test' />
+            <div>title</div>
+          </div>
+          <Comps.NavigationOption />
+          <Comps.NavigationOption />
+          <Comps.NavigationOption />
         </div>
         <div className={classes.view}>
           <div className={classes.header}>

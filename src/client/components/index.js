@@ -1,3 +1,1 @@
-export { default as Workspaces } from './workspaces/workspaces.jsx';
-
-// export { default as Navigation } from './navigation/navigation.jsx';
+export { default as NavigationOption } from './navigation-option/navigation-option.jsx';

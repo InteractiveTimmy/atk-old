@@ -3,7 +3,7 @@ import { shadeBlend } from '../../utils/index.js';
 const styles = theme => ( ( Object.keys( theme ).length !== 0 ) ?
   ( {
   navigation: {
-    backgroundColor: shadeBlend( 0.06, theme.accent, theme.target ),
+    backgroundColor: theme.accent,
     color: theme.foreground,
     width: '16em',
     display: 'flex',
