@@ -25,8 +25,6 @@ class NavigationOption extends Component
 
   render ( )
   {
-    console.log( 'test', this.props );
-
     const { classes } = this.props;
     const { selected } = this.state;
 

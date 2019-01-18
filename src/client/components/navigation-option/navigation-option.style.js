@@ -4,6 +4,7 @@ const styles = theme => ( ( Object.keys( theme ).length !== 0 ) ? {
   navigationOption: {
     transition: 'background-color 0.2s, height 0.2s',
     cursor: 'pointer',
+    userSelect: 'none',
 
     '&[data-selected=true]': {
       backgroundColor: shadeBlend( 0.06, theme.accent, theme.target )

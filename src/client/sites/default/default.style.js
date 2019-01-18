@@ -10,6 +10,12 @@ const styles = theme => ( ( Object.keys( theme ).length !== 0 ) ?
     flexDirection: 'column'
   },
 
+  navigationOptions: {
+    flexGrow: '1',
+    overflowY: 'auto',
+    overflowX: 'hidden'
+  },
+
   view: {
     backgroundColor: theme.background,
     color: theme.foreground,

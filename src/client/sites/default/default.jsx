@@ -11,16 +11,20 @@ class Index extends Component
   {
     const { classes } = this.props;
 
+    const navOptions = [ ];
+
+    // generate nav options
+    for ( let x = 0; x < 20; x++ )
+    { navOptions.push( <Comps.NavigationOption key={x} /> ); }
+
     return (
       <Fragment>
         <div className={classes.navigation}>
-          <div style={{ height: '4em', display: 'flex', alignItems: 'center' }}>
-            <img style={{ height: '3.2em', margin: '0.4em'}} src='https://icons8.github.io/flat-color-icons/svg/cloth.svg' alt='test' />
-            <div>title</div>
+          <Comps.Brand name='Applet Name' logo='https://icons8.github.io/flat-color-icons/svg/circuit.svg' />
+          <div className={classes.navigationOptions}>
+            {navOptions}
           </div>
-          <Comps.NavigationOption />
-          <Comps.NavigationOption />
-          <Comps.NavigationOption />
+          <Comps.Info name='Display Name' status='Away' avatar='https://icons8.github.io/flat-color-icons/svg/decision.svg' />
         </div>
         <div className={classes.view}>
           <div className={classes.header}>
