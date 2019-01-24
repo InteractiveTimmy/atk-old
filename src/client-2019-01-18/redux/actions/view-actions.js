@@ -19,10 +19,10 @@ export const getTheme = ( ) => dispatch => {
 
   // template data
   let data = {
-    foreground: '#333333',
-    background: '#ffffff',
+    foreground: '#eeeeee',
+    background: '#333333',
     target: '#eeeeee',
-    primary: '#007755',
+    primary: '#00ddaa',
     accent: '#005577',
     warning: '#ffaa11',
     info: '#00bbee',

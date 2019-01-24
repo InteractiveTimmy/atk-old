@@ -2,48 +2,34 @@ import { shadeBlend } from '../../utils/index.js';
 
 const styles = theme => ( ( Object.keys( theme ).length !== 0 ) ?
   ( {
-  navigation: {
-    backgroundColor: theme.accent,
-    color: theme.foreground,
-    width: '16em',
-    display: 'flex',
-    flexDirection: 'column'
-  },
+    navigation: {
+      backgroundColor: theme.primary,
+      color: theme.target,
+      fill: theme.target,
+      width: '4em',
+      display: 'flex',
+      flexDirection: 'column'
+    },
 
-  navigationOptions: {
-    flexGrow: '1',
-    overflowY: 'auto',
-    overflowX: 'hidden'
-  },
+    widget: {
+      backgroundColor: theme.accent,
+      color: theme.target,
+      width: '16em',
+      display: 'flex',
+      flexDirection: 'column'
+    },
 
-  view: {
-    backgroundColor: theme.background,
-    color: theme.foreground,
-    flexGrow: '1',
-    display: 'flex',
-    flexDirection: 'column'
-  },
+    applet: {
+      backgroundColor: theme.background,
+      color: theme.foreground,
+      flexGrow: 1
+    },
 
-  header: {
-    backgroundColor: shadeBlend( 0.06, theme.background, theme.target ),
-    height: '4em',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-  },
-
-  content: {
-    flexGrow: '1',
-    display: 'flex'
-  },
-
-  applet: {
-    flexGrow: '1'
-  },
-
-  widget: {
-    width: '24em'
-  }
-} ) : null );
+    navUpper: {
+      width: '4em',
+      flexGrow: '1'
+    }
+  } ) : null
+);
 
 export default styles;

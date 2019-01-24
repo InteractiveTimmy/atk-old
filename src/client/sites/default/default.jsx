@@ -4,6 +4,7 @@ import injectSheet from 'react-jss';
 import styles from './default.style.js';
 
 import * as Comps from '../../components/index.js';
+import * as Images from '../../images/index.js';
 
 class Index extends Component
 {
@@ -20,22 +21,20 @@ class Index extends Component
     return (
       <Fragment>
         <div className={classes.navigation}>
-          <Comps.Brand name='Applet Name' logo='https://icons8.github.io/flat-color-icons/svg/circuit.svg' />
-          <div className={classes.navigationOptions}>
-            {navOptions}
+          <Comps.NavigationOption Icon={Images.Icons.Brand} name='Brand' large />
+          <div className={classes.navUpper}>
+            <Comps.NavigationOption Icon={Images.Icons.Games} name='Games' />
+            <Comps.NavigationOption Icon={Images.Icons.Music} name='Music' />
+            <Comps.NavigationOption Icon={Images.Icons.Movies} name='Movies' />
           </div>
-          <Comps.Info name='Display Name' status='Away' avatar='https://icons8.github.io/flat-color-icons/svg/decision.svg' />
-        </div>
-        <div className={classes.view}>
-          <div className={classes.header}>
-            <div>title</div>
-            <div>widgets</div>
-          </div>
-          <div className={classes.content}>
-            <div className={classes.applet}>Applet</div>
-            <div className={classes.widget}>Widget</div>
+          <div className={classes.navLower}>
+            <Comps.NavigationOption Icon={Images.Icons.Chat} name='Conversations' />
+            <Comps.NavigationOption Icon={Images.Icons.Notifications} name='Notifications' />
+            <Comps.NavigationOption Icon={Images.Icons.AccountCircle} name='Account' large />
           </div>
         </div>
+        <div className={classes.widget}>c</div>
+        <div className={classes.applet}>c</div>
       </Fragment>
     );
   }
