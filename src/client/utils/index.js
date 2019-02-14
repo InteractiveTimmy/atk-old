@@ -1,1 +1,0 @@
-export { default as shadeBlend } from './shade-blend.js';
