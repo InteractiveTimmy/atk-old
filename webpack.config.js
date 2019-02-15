@@ -1,13 +1,13 @@
-const PATH = require( 'path' );
-const HTMLWPP = require( 'html-webpack-plugin' );
+const PATH = require('path');
+const HTMLWPP = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    index: './src/client/index.js'
+    index: './src/client/index.js',
   },
   output: {
     filename: './[name].js',
-    path: PATH.join( __dirname, './build' )
+    path: PATH.join(__dirname, './build'),
   },
   module: {
     rules: [
@@ -15,35 +15,35 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.(css|sass|scss)$/,
         use: [
           'style-loader',
           'css-loader',
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: /\.(jpe?g|png|gif|eot|svg|ttf|woff2?|otf)$/,
-        use: [ {
+        use: [{
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'img/'
-          }
-        } ]
-      }
-    ]
+            outputPath: 'img/',
+          },
+        }],
+      },
+    ],
   },
   plugins: [
-    new HTMLWPP( {
-      template: './src/client/index.html'
-    } )
+    new HTMLWPP({
+      template: './src/client/index.html',
+    }),
   ],
   devServer: {
     historyApiFallback: true,
-  }
-}
+  },
+};
