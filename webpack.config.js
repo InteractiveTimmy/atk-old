@@ -3,7 +3,7 @@ const HTMLWPP = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    index: './src/client/index.js',
+    index: './src/client/index.jsx',
   },
   output: {
     filename: './[name].js',
