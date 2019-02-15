@@ -1,0 +1,6 @@
+module.exports = {
+    "extends": "airbnb",
+    "rules": {
+        "linebreak-style": ["error", process.platform === "win32" ? "windows" : "unix"]
+    }
+};
