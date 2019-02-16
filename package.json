@@ -15,7 +15,7 @@
     "start-dev": "webpack-dev-server --config ./webpack.config.js --mode development --open --hot",
     "build": "webpack --config ./webpack.config.js --mode production",
     "build-watch": "webpack --config ./webpack.config.js --mode development --watch",
-    "lint-client": "eslint ./src/client/** --ignore-pattern *.html"
+    "lint-client": "eslint ./src/client/** --ignore-pattern *.html --ignore-pattern *.css"
   },
   "repository": {
     "type": "git",
@@ -28,13 +28,16 @@
   },
   "homepage": "https://github.com/InteractiveTimmy/atk#readme",
   "dependencies": {
+    "prop-types": "^15.7.2",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-helmet": "^5.2.0",
+    "react-jss": "^8.6.1",
     "react-redux": "^6.0.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
@@ -52,7 +55,6 @@
     "html-webpack-plugin": "^3.2.0",
     "http-server": "^0.11.1",
     "node-sass": "^4.11.0",
-    "react-jss": "^8.6.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.3",
