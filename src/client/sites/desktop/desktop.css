@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  font: 16px 'Work Sans', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
