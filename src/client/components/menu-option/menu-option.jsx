@@ -32,22 +32,32 @@ class MenuOption extends Component {
     const { classes } = this.props;
 
     // prop data
-    const { Icon, children, size } = this.props;
+    const {
+      Icon,
+      children,
+      selected,
+      size,
+      outline,
+    } = this.props;
 
     // state data
     const { isHovered } = this.state;
 
-    const elmIcon = <Icon style={classes.icon} data-size={size} />;
+    const elmIcon = <Icon style={classes.icon} />;
 
     return (
-      <div
-        className={classes.menuOption}
-        data-size={size}
-        onMouseEnter={this.handleMouseOver.bind(this, true)}
-        onMouseLeave={this.handleMouseOver.bind(this, false)}
-      >
-        <div className={classes.iconContainer} data-size={size}>
-          {elmIcon}
+      <div className={classes.menuOption}>
+        <div
+          className={classes.optionContainer}
+          data-selected={selected}
+          data-size={size}
+          data-outline={outline}
+          onMouseEnter={this.handleMouseOver.bind(this, true)}
+          onMouseLeave={this.handleMouseOver.bind(this, false)}
+        >
+          <div className={classes.iconContainer} data-size={size}>
+            {elmIcon}
+          </div>
         </div>
         <div className={classes.tooltip} data-visible={isHovered}>
           <div className={classes.tooltipArrow} />
@@ -66,11 +76,15 @@ MenuOption.propTypes = {
   classes: PropTypes.shape({
     menuOption: PropTypes.string.isRequired,
   }).isRequired,
+  selected: PropTypes.bool,
+  outline: PropTypes.string,
   size: PropTypes.string,
 };
 
 MenuOption.defaultProps = {
+  selected: false,
+  outline: '',
   size: 'medium',
-}
+};
 
 export default injectSheet(styles)(MenuOption);

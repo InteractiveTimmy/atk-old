@@ -19,9 +19,9 @@ export const loadPrimary = () => (dispatch) => {
   dispatch({
     type: MENU_LOAD_PRIMARY,
     data: [
-      { name: 'Primary A', icon: 'Brand' },
-      { name: 'Primary B', icon: 'Brand' },
-      { name: 'Primary C', icon: 'Brand' },
+      { name: 'Music', icon: 'Album' },
+      { name: 'Movies', icon: 'PlayCircle' },
+      { name: 'Games', icon: 'Games' },
     ],
   });
 };
@@ -30,9 +30,9 @@ export const loadSecondary = () => (dispatch) => {
   dispatch({
     type: MENU_LOAD_SECONDARY,
     data: [
-      { name: 'Secondary A', icon: 'Brand' },
-      { name: 'Secondary B', icon: 'Brand' },
-      { name: 'Secondary C', icon: 'Brand' },
+      { name: 'Settings', icon: 'Settings' },
+      { name: 'Chat', icon: 'Chat' },
+      { name: 'See All', icon: 'Apps' },
     ],
   });
 };
@@ -42,7 +42,7 @@ export const loadAccount = () => (dispatch) => {
     type: MENU_LOAD_ACCOUNT,
     data: {
       name: 'Account',
-      icon: 'Brand',
+      icon: 'AccountCircle',
     },
   });
 };

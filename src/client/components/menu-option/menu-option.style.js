@@ -2,27 +2,45 @@ import { shadeBlend } from '../../utils';
 
 const styles = theme => ({
   menuOption: {
-    transition: 'background-color 0.2s',
     position: 'relative',
     display: 'flex',
     alignItems: 'center',
+  },
+  optionContainer: {
+    transition: 'background-color 0.2s',
+    display: 'flex',
+    alignItems: 'center',
     justifyContent: 'center',
-    height: '3.6rem',
     width: '3.6rem',
     cursor: 'pointer',
+    '&[data-size=small]': {
+      height: '2.6rem',
+    },
     '&[data-size=medium]': {
       height: '3rem',
-      width: '3.6rem',
     },
     '&[data-size=large]': {
       height: '3.6rem',
-      width: '3.6rem',
     },
+    '&[data-outline=success]': { stroke: theme.colors.success },
+    '&[data-outline=processing]': { stroke: theme.colors.processing },
+    '&[data-outline=warning]': { stroke: theme.colors.warning },
+    '&[data-outline=error]': { stroke: theme.colors.error },
     '&:hover': {
       backgroundColor: shadeBlend(0.12, theme.colors.primary),
     },
+    '&[data-selected=true]': {
+      backgroundColor: shadeBlend(0.12, theme.colors.primary),
+      '&:hover': {
+        backgroundColor: shadeBlend(0.24, theme.colors.primary),
+      },
+    },
   },
   iconContainer: {
+    '&[data-size=small]': {
+      height: '1.8rem',
+      width: '1.8rem',
+    },
     '&[data-size=medium]': {
       height: '2.2rem',
       width: '2.2rem',
@@ -34,9 +52,10 @@ const styles = theme => ({
   },
   icon: {
     fill: theme.colors.target,
+    strokeWidth: '0.05em',
   },
   tooltip: {
-    transition: 'opacity 0.2s',
+    zIndex: '1',
     opacity: '0.0',
     position: 'absolute',
     left: '100%',
@@ -49,14 +68,14 @@ const styles = theme => ({
     backgroundColor: theme.colors.primary,
     color: theme.colors.target,
     borderColor: theme.colors.primary,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
     '&[data-visible=true]': {
-      transitionDelay: '1s',
+      transition: 'opacity 0.4s 0.2s',
+      visibility: 'visible',
       opacity: '1.0',
     },
     '&[data-visible=false]': {
+      transition: 'opacity 0.2s, visibility 0.2s 0.1s',
+      visibility: 'hidden',
       opacity: '0.0',
     },
   },

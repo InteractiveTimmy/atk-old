@@ -1,5 +1,5 @@
 // dependencies
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { ThemeProvider } from 'react-jss';
@@ -12,14 +12,13 @@ import {
   // Applet,
   Menu,
   MenuOption,
-  // Widget,
+  Widget,
 } from '../../components';
 
 import { Icons } from '../../images';
 
 // style
 import './desktop.css';
-import styles from './desktop.style';
 
 class Desktop extends Component {
   componentWillMount() {
@@ -56,19 +55,31 @@ class Desktop extends Component {
     ));
 
     const elmMenuOptionsSecondary = menu.secondary.map(option => (
-      <MenuOption key={option.name} Icon={Icons[option.icon]}>{option.name}</MenuOption>
+      <MenuOption key={option.name} Icon={Icons[option.icon]} size="small">{option.name}</MenuOption>
     ));
 
-    const elmMenuAccount = <MenuOption Icon={Icons[menu.account.icon]} size="large">{menu.account.name}</MenuOption>
+    const elmMenuAccount = <MenuOption Icon={Icons[menu.account.icon]} size="large">{menu.account.name}</MenuOption>;
+
+    const CompWidget = () => (
+      <div>Placeholder Data</div>
+    );
 
     return (
       <ThemeProvider theme={view}>
-        <Menu
-          brand={elmMenuBrand}
-          primary={elmMenuOptionsPrimary}
-          secondary={elmMenuOptionsSecondary}
-          account={elmMenuAccount}
-        />
+        <Fragment>
+          <Menu
+            brand={elmMenuBrand}
+            primary={elmMenuOptionsPrimary}
+            secondary={elmMenuOptionsSecondary}
+            account={elmMenuAccount}
+          />
+          <Widget
+            collapsed={false}
+            CloseIcon={Icons.ChevronLeft}
+            OpenIcon={Icons.ChevronRight}
+            CompWidget={CompWidget}
+          />
+        </Fragment>
       </ThemeProvider>
     );
   }
@@ -98,6 +109,7 @@ Desktop.propTypes = {
   onMenuLoadBrand: PropTypes.func.isRequired,
   onMenuLoadPrimary: PropTypes.func.isRequired,
   onMenuLoadSecondary: PropTypes.func.isRequired,
+  onMenuLoadAccount: PropTypes.func.isRequired,
   onViewLoadColors: PropTypes.func.isRequired,
   onViewSetSite: PropTypes.func.isRequired,
 };
