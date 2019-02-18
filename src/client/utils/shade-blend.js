@@ -1,5 +1,4 @@
-function convertToArray(value)
-{
+function convertToArray(value) {
   const output = [];
 
   if (value.length === 7) {
@@ -18,7 +17,7 @@ function convertToArray(value)
   } else if (value.length === 4) {
     for (let i = 0; i < value.length; i += 1) {
       if (i !== 0) {
-        output.push(parseInt(output[i] * output[i], 16));
+        output.push(parseInt(value.charAt(i) + value.charAt(i), 16));
       }
     }
   }
@@ -26,20 +25,20 @@ function convertToArray(value)
   return output;
 }
 
+function createRGBString(r, g, b) {
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
 export default (value, colorA = '#000', colorB = '#fff') => {
-
-  let output = '#';
-
   const parsedColorA = convertToArray(colorA);
   const parsedColorB = convertToArray(colorB);
+  const outputColor = [];
 
-  for (let a = 0; a < colorA.length; a += 1) {
-    parsedColorA.push(colorA.charAt(a));
+  for (let i = 0; i < 3; i += 1) {
+    parsedColorA[i] *= (1.0 - value);
+    parsedColorB[i] *= value;
+    outputColor.push(parsedColorA[i] + parsedColorB[i]);
   }
 
-  for (let b = 0; b < colorB.length; b += 1) {
-    parsedColorB.push(colorB.charAt(b));
-  }
-
-  return output;
+  return createRGBString(...outputColor);
 };
