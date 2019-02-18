@@ -1,4 +1,9 @@
-import { MENU_LOAD_BRAND, MENU_LOAD_PRIMARY, MENU_LOAD_SECONDARY } from '../actions/types';
+import {
+  MENU_LOAD_BRAND,
+  MENU_LOAD_PRIMARY,
+  MENU_LOAD_SECONDARY,
+  MENU_LOAD_ACCOUNT,
+} from '../actions/types';
 
 const initialState = {
   brand: {},
@@ -20,6 +25,10 @@ export default (state = initialState, action) => {
 
     case MENU_LOAD_SECONDARY:
       newState.secondary = action.data;
+      break;
+
+    case MENU_LOAD_ACCOUNT:
+      newState.account = action.data;
       break;
 
     default:

@@ -1,28 +1,43 @@
+import { shadeBlend } from '../../utils';
+
 const styles = theme => ({
   menuOption: {
+    transition: 'background-color 0.2s',
     position: 'relative',
-    height: '3rem',
     display: 'flex',
     alignItems: 'center',
-  },
-  iconContainer: {
-    width: '2rem',
-    height: '2rem',
-    margin: '0.5rem',
-  },
-  icon: {
-    fill: '#777',
-    stroke: '#ff0000',
-    width: '100%',
-    height: '100%',
-  },
-  nameContainer: {
-    marginLeft: '0.5rem',
-    '&:hover .tooltip': {
-      opacity: '1.0',
+    justifyContent: 'center',
+    height: '3.6rem',
+    width: '3.6rem',
+    cursor: 'pointer',
+    '&[data-size=medium]': {
+      height: '3rem',
+      width: '3.6rem',
+    },
+    '&[data-size=large]': {
+      height: '3.6rem',
+      width: '3.6rem',
+    },
+    '&:hover': {
+      backgroundColor: shadeBlend(0.12, theme.colors.primary),
     },
   },
+  iconContainer: {
+    '&[data-size=medium]': {
+      height: '2.2rem',
+      width: '2.2rem',
+    },
+    '&[data-size=large]': {
+      height: '2.8rem',
+      width: '2.8rem',
+    },
+  },
+  icon: {
+    fill: theme.colors.target,
+  },
   tooltip: {
+    transition: 'opacity 0.2s',
+    opacity: '0.0',
     position: 'absolute',
     left: '100%',
     padding: '0.2rem 0.6rem',
@@ -31,12 +46,19 @@ const styles = theme => ({
     borderWidth: '0.05rem',
     borderStyle: 'solid',
     borderRadius: '0.2rem',
-    backgroundColor: theme.colors.background,
-    color: theme.colors.foreground,
-    borderColor: theme.colors.foreground,
+    backgroundColor: theme.colors.primary,
+    color: theme.colors.target,
+    borderColor: theme.colors.primary,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    '&[data-visible=true]': {
+      transitionDelay: '1s',
+      opacity: '1.0',
+    },
+    '&[data-visible=false]': {
+      opacity: '0.0',
+    },
   },
   tooltipArrow: {
     position: 'absolute',
@@ -46,7 +68,10 @@ const styles = theme => ({
     borderWidth: '0.4rem',
     borderStyle: 'solid',
     borderColor: 'transparent',
-    borderRightColor: theme.colors.foreground,
+    borderRightColor: theme.colors.primary,
+  },
+  tooltipText: {
+    fontSize: '0.8rem',
   },
 });
 

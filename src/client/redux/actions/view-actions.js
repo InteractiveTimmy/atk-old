@@ -4,11 +4,11 @@ export const loadColors = () => (dispatch) => {
   dispatch({
     type: VIEW_LOAD_COLORS,
     data: {
-      foreground: '#333',
+      forground: '#333',
       background: '#eee',
-      targetcolor: '#fff',
-      primary: '#057',
-      accent: '#075',
+      target: '#fff',
+      primary: '#08b',
+      accent: '#0b8',
       success: '#6b4',
       processing: '#0be',
       warning: '#fa1',

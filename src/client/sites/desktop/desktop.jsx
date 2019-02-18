@@ -27,13 +27,20 @@ class Desktop extends Component {
     const { onViewLoadColors, onViewSetSite } = this.props;
 
     // menu
-    const { onMenuLoadBrand, onMenuLoadPrimary, onMenuLoadSecondary } = this.props;
+    const {
+      onMenuLoadBrand,
+      onMenuLoadPrimary,
+      onMenuLoadSecondary,
+      onMenuLoadAccount,
+    } = this.props;
 
     onViewLoadColors();
+    onViewSetSite();
 
     onMenuLoadBrand();
     onMenuLoadPrimary();
     onMenuLoadSecondary();
+    onMenuLoadAccount();
   }
 
   render() {
@@ -42,7 +49,7 @@ class Desktop extends Component {
 
     if (!menu.brand.name) { return (<div />); }
 
-    const elmMenuBrand = <MenuOption Icon={Icons[menu.brand.icon]}>{menu.brand.name}</MenuOption>;
+    const elmMenuBrand = <MenuOption Icon={Icons[menu.brand.icon]} size="large">{menu.brand.name}</MenuOption>;
 
     const elmMenuOptionsPrimary = menu.primary.map(option => (
       <MenuOption key={option.name} Icon={Icons[option.icon]}>{option.name}</MenuOption>
@@ -52,12 +59,15 @@ class Desktop extends Component {
       <MenuOption key={option.name} Icon={Icons[option.icon]}>{option.name}</MenuOption>
     ));
 
+    const elmMenuAccount = <MenuOption Icon={Icons[menu.account.icon]} size="large">{menu.account.name}</MenuOption>
+
     return (
       <ThemeProvider theme={view}>
         <Menu
           brand={elmMenuBrand}
           primary={elmMenuOptionsPrimary}
           secondary={elmMenuOptionsSecondary}
+          account={elmMenuAccount}
         />
       </ThemeProvider>
     );
@@ -83,10 +93,13 @@ Desktop.propTypes = {
     brand: PropTypes.object,
     primary: PropTypes.array,
     secondary: PropTypes.array,
+    account: PropTypes.object,
   }).isRequired,
   onMenuLoadBrand: PropTypes.func.isRequired,
   onMenuLoadPrimary: PropTypes.func.isRequired,
   onMenuLoadSecondary: PropTypes.func.isRequired,
+  onViewLoadColors: PropTypes.func.isRequired,
+  onViewSetSite: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -98,6 +111,7 @@ const mapStateToProps = state => ({
     brand: state.menu.brand,
     primary: state.menu.primary,
     secondary: state.menu.secondary,
+    account: state.menu.account,
   },
 });
 
@@ -107,6 +121,7 @@ const mapDispatchToProps = dispatch => ({
   onMenuLoadBrand: () => dispatch(menuActions.loadBrand()),
   onMenuLoadPrimary: () => dispatch(menuActions.loadPrimary()),
   onMenuLoadSecondary: () => dispatch(menuActions.loadSecondary()),
+  onMenuLoadAccount: () => dispatch(menuActions.loadAccount()),
 });
 
 

@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import injectSheet from 'react-jss';
 
+import { shadeBlend } from '../../utils';
+
 // actions
 import { menuActions } from '../../redux/actions';
 
@@ -15,8 +17,14 @@ class MenuOption extends Component {
     super(props);
 
     this.state = {
-      selected: null,
+      isHovered: false,
     };
+  }
+
+  handleMouseOver(v) {
+    this.setState(() => ({
+      isHovered: v,
+    }));
   }
 
   render() {
@@ -24,19 +32,24 @@ class MenuOption extends Component {
     const { classes } = this.props;
 
     // prop data
-    const { Icon, children } = this.props;
+    const { Icon, children, size } = this.props;
 
-    const elmIcon = <Icon style={classes.icon} />;
+    // state data
+    const { isHovered } = this.state;
+
+    const elmIcon = <Icon style={classes.icon} data-size={size} />;
 
     return (
-      <div className={classes.menuOption}>
-        <div className={classes.iconContainer}>
+      <div
+        className={classes.menuOption}
+        data-size={size}
+        onMouseEnter={this.handleMouseOver.bind(this, true)}
+        onMouseLeave={this.handleMouseOver.bind(this, false)}
+      >
+        <div className={classes.iconContainer} data-size={size}>
           {elmIcon}
         </div>
-        <div className={classes.nameContainer}>
-          {children}
-        </div>
-        <div className={classes.tooltip}>
+        <div className={classes.tooltip} data-visible={isHovered}>
           <div className={classes.tooltipArrow} />
           <div className={classes.tooltipText}>
             {children}
@@ -53,6 +66,11 @@ MenuOption.propTypes = {
   classes: PropTypes.shape({
     menuOption: PropTypes.string.isRequired,
   }).isRequired,
+  size: PropTypes.string,
 };
+
+MenuOption.defaultProps = {
+  size: 'medium',
+}
 
 export default injectSheet(styles)(MenuOption);

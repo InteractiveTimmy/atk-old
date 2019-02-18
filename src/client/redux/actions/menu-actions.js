@@ -1,4 +1,9 @@
-import { MENU_LOAD_BRAND, MENU_LOAD_PRIMARY, MENU_LOAD_SECONDARY } from './types';
+import {
+  MENU_LOAD_BRAND,
+  MENU_LOAD_PRIMARY,
+  MENU_LOAD_SECONDARY,
+  MENU_LOAD_ACCOUNT,
+} from './types';
 
 export const loadBrand = () => (dispatch) => {
   dispatch({
@@ -29,5 +34,15 @@ export const loadSecondary = () => (dispatch) => {
       { name: 'Secondary B', icon: 'Brand' },
       { name: 'Secondary C', icon: 'Brand' },
     ],
+  });
+};
+
+export const loadAccount = () => (dispatch) => {
+  dispatch({
+    type: MENU_LOAD_ACCOUNT,
+    data: {
+      name: 'Account',
+      icon: 'Brand',
+    },
   });
 };

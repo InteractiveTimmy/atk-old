@@ -24,7 +24,12 @@ class Menu extends Component {
     const { classes } = this.props;
 
     // prop data
-    const { brand, primary, secondary } = this.props;
+    const {
+      brand,
+      primary,
+      secondary,
+      account,
+    } = this.props;
 
     return (
       <div className={classes.menu}>
@@ -37,6 +42,9 @@ class Menu extends Component {
         <div className={classes.secondary}>
           {secondary}
         </div>
+        <div className={classes.account}>
+          {account}
+        </div>
       </div>
     );
   }
@@ -46,6 +54,7 @@ Menu.propTypes = {
   brand: PropTypes.element.isRequired,
   primary: PropTypes.arrayOf(PropTypes.element).isRequired,
   secondary: PropTypes.arrayOf(PropTypes.element).isRequired,
+  account: PropTypes.element.isRequired,
   classes: PropTypes.shape({
     menu: PropTypes.string.isRequired,
   }).isRequired,

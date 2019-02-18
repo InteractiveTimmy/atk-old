@@ -1,16 +1,25 @@
 const styles = theme => ({
   menu: {
+    backgroundColor: theme.colors.primary,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  brand: {
+    display: 'flex',
+  },
+  primary: {
+    flexGrow: 1,
     display: 'flex',
     flexDirection: 'column',
   },
-  brand: {
-    
+  secondary: {
+    flexGrow: 1,
+    display: 'flex',
+    flexDirection: 'column-reverse',
   },
-  primary: {
-
-  },
-  menuSecondary: {
-
+  account: {
+    display: 'flex',
   },
 });
 
