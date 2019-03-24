@@ -22,8 +22,7 @@ class Widget extends Component {
     // prop data
     const {
       collapsed,
-      CloseIcon,
-      OpenIcon,
+      ExpanderIcon,
       CompWidget,
     } = this.props;
 
@@ -45,10 +44,7 @@ class Widget extends Component {
             </div>
             <div className={classes.collapser}>
               <div className={classes.iconContainer}>
-                <OpenIcon style={classes.icon} />
-              </div>
-              <div className={classes.iconContainer}>
-                <CloseIcon style={classes.icon} />
+                <ExpanderIcon style={classes.icon} />
               </div>
             </div>
           </div>
@@ -64,8 +60,7 @@ Widget.propTypes = {
     widget: PropTypes.string.isRequired,
   }).isRequired,
   collapsed: PropTypes.bool.isRequired,
-  CloseIcon: PropTypes.func.isRequired,
-  OpenIcon: PropTypes.func.isRequired,
+  ExpanderIcon: PropTypes.func.isRequired,
   CompWidget: PropTypes.func,
 };
 

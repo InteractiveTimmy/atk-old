@@ -13,6 +13,7 @@ import {
   Menu,
   MenuOption,
   Widget,
+  Applet,
 } from '../../components';
 
 import { Icons } from '../../images';
@@ -60,9 +61,7 @@ class Desktop extends Component {
 
     const elmMenuAccount = <MenuOption Icon={Icons[menu.account.icon]} size="large">{menu.account.name}</MenuOption>;
 
-    const CompWidget = () => (
-      <div>Placeholder Data</div>
-    );
+    const CompWidget = () => (null);
 
     return (
       <ThemeProvider theme={view}>
@@ -75,10 +74,10 @@ class Desktop extends Component {
           />
           <Widget
             collapsed={false}
-            CloseIcon={Icons.ChevronLeft}
-            OpenIcon={Icons.ChevronRight}
+            ExpanderIcon={Icons.ChevronLeft}
             CompWidget={CompWidget}
           />
+          <Applet />
         </Fragment>
       </ThemeProvider>
     );

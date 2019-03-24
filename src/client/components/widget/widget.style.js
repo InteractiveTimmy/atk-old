@@ -4,7 +4,8 @@ const styles = theme => ({
   widget: {
     backgroundColor: theme.colors.accent,
     color: theme.colors.target,
-    width: '18rem',
+    width: '16rem',
+    overflowY: 'auto',
     display: 'flex',
     flexDirection: 'column',
     overflow: 'hidden',
@@ -14,7 +15,7 @@ const styles = theme => ({
       '& > div': {
         transition: 'opacity 0.2s',
         opacity: '0.0',
-        minWidth: '18rem',
+        minWidth: '16rem',
       },
     },
     '&[data-collapsed=false]': {
@@ -22,13 +23,13 @@ const styles = theme => ({
       '& > div': {
         transition: 'opacity 0.4s 0.2s',
         opacity: '1.0',
-        minWidth: '18rem',
+        minWidth: '16rem',
       },
     },
   },
   header: {
     height: '3.6rem',
-    minWidth: '18rem',
+    minWidth: '16rem',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
@@ -40,36 +41,18 @@ const styles = theme => ({
     justifyContent: 'space-between',
   },
   collapser: {
-    position: 'relative',
     transition: 'background-color 0.2s',
     width: '2.6rem',
     height: '2.6rem',
     borderRadius: '0.2rem',
     marginRight: '0.5rem',
+    backgroundColor: theme.colors.primary,
     cursor: 'pointer',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     '&:hover': {
-      backgroundColor: shadeBlend(0.12, theme.colors.accent, theme.colors.target),
-      '& div:first-child': {
-        transition: 'opacity 0.1s',
-        opacity: '0.0',
-      },
-      '& div:last-child': {
-        transition: 'opacity 0.1s 0.1s',
-        opacity: '1.0',
-      },
-    },
-    '& div:first-child': {
-      transition: 'opacity 0.1s 0.1s',
-      position: 'absolute',
-      opacity: '1.0',
-    },
-    '& div:last-child': {
-      transition: 'opacity 0.1s',
-      position: 'absolute',
-      opacity: '0.0',
+      backgroundColor: shadeBlend(0.12, theme.colors.primary, theme.colors.target),
     },
   },
   iconContainer: {
@@ -93,6 +76,7 @@ const styles = theme => ({
   noTarget: {
     flexGrow: 1,
     color: shadeBlend(0.48, theme.colors.target, theme.colors.accent),
+    userSelect: 'none',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
