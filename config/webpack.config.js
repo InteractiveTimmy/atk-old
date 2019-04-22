@@ -21,24 +21,6 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
-      {
-        test: /\.(css|sass|scss)$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
-      },
-      {
-        test: /\.(jpe?g|png|gif|eot|svg|ttf|woff2?|otf)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'img/',
-          },
-        }],
-      },
     ],
   },
   plugins: [
