@@ -3,13 +3,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // redux
-// TODO import { Provider } from 'react-redux';
-// TODO import store from './redux/store';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 // site components
-// TODO import { Desktop } from './sites';
+import { Desktop } from './views';
+
+// TODO migrate to desktop switcher class
 
 ReactDOM.render(
-  <div>TEST</div>,
+  <Provider store={store}>
+    <Desktop />
+  </Provider>,
   document.getElementById('app'),
 );
